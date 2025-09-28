@@ -82,8 +82,9 @@ def run(episodes, istraining = True, render = False):
             pickle.dump(q_table, f)
         # print(f"Q-table saved to: frozenlake_4x4.pkl")
         
-        # Save Q-table as readable CSV file
-        np.savetxt('frozenlake_4x4_qtable.csv', q_table, delimiter=',', fmt='%.6f')
+        # Save Q-table as readable CSV file with headers
+        header = 'Left,Down,Right,Up'
+        np.savetxt('frozenlake_4x4_qtable.csv', q_table, delimiter=',', fmt='%.6f', header=header, comments='')
         # print(f"Q-table saved to: frozenlake_4x4_qtable.csv")
 
 
